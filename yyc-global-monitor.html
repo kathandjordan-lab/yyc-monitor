@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0058)file:///C:/Users/Staff/Downloads/yyc-global-monitor_2.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>YYC Global Flight Monitor</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;600&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="./yyc-global-monitor_files/css2" rel="stylesheet">
 <style>
 :root {
   --bg: #04070f;
@@ -620,43 +620,34 @@ body::before {
 .skel { background: rgba(148,210,255,0.04); border-radius: 6px; animation: sk 1.5s infinite; }
 @keyframes sk { 0%,100%{opacity:0.3}50%{opacity:0.8} }
 
-/* ── AMADEUS BANNER ── */
-.amadeus-banner {
-  background: linear-gradient(135deg, rgba(0,114,206,0.07), rgba(167,139,250,0.05));
-  border: 1px solid rgba(0,114,206,0.25);
+/* ── RAILWAY BANNER ── */
+.railway-banner {
+  background: linear-gradient(135deg, rgba(148,210,255,0.06), rgba(167,139,250,0.05));
+  border: 1px solid var(--border2);
   border-radius: 14px; padding: 14px 20px;
   margin-bottom: 20px;
   display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
 }
-.amadeus-banner.connected {
-  background: linear-gradient(135deg, rgba(74,222,128,0.06), rgba(0,114,206,0.05));
+.railway-banner.connected {
+  background: linear-gradient(135deg, rgba(74,222,128,0.06), rgba(56,189,248,0.05));
   border-color: rgba(74,222,128,0.3);
 }
-.amadeus-banner.error { border-color: rgba(248,113,113,0.4); background: rgba(248,113,113,0.04); }
-.amadeus-icon { font-size: 20px; flex-shrink: 0; }
-.amadeus-text { flex: 1; min-width: 180px; }
-.amadeus-title { font-family: var(--mono); font-size: 11px; font-weight: 600; color: #60a5fa; margin-bottom: 2px; letter-spacing: 0.5px; }
-.amadeus-banner.connected .amadeus-title { color: var(--green); }
-.amadeus-banner.error .amadeus-title { color: var(--red); }
-.amadeus-sub { font-size: 11px; color: var(--muted2); line-height: 1.5; }
-.amadeus-inputs { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-.amadeus-input {
-  background: rgba(0,0,0,0.3); border: 1px solid rgba(0,114,206,0.25);
-  border-radius: 8px; padding: 7px 11px;
-  color: var(--text); font-size: 11px; font-family: var(--mono);
-  outline: none; width: 200px;
-}
-.amadeus-input:focus { border-color: #60a5fa; }
-.amadeus-input::placeholder { color: var(--muted); }
-.amadeus-btn {
-  padding: 8px 16px; border-radius: 8px;
+.railway-banner.error { border-color: rgba(248,113,113,0.4); background: rgba(248,113,113,0.04); }
+.railway-icon { font-size: 20px; flex-shrink: 0; }
+.railway-text { flex: 1; min-width: 180px; }
+.railway-title { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--accent); margin-bottom: 2px; letter-spacing: 0.5px; }
+.railway-banner.connected .railway-title { color: var(--green); }
+.railway-banner.error .railway-title { color: var(--red); }
+.railway-sub { font-size: 11px; color: var(--muted2); line-height: 1.5; }
+.railway-btn {
+  padding: 8px 18px; border-radius: 8px;
   font-size: 11px; font-weight: 600; font-family: var(--mono);
   cursor: pointer; transition: all 0.2s; white-space: nowrap;
-  background: rgba(0,114,206,0.15); border: 1px solid rgba(0,114,206,0.35);
-  color: #60a5fa;
+  background: rgba(148,210,255,0.1); border: 1px solid var(--border2);
+  color: var(--accent);
 }
-.amadeus-btn:hover { background: rgba(0,114,206,0.25); }
-.amadeus-btn.connected { background: rgba(74,222,128,0.12); border-color: rgba(74,222,128,0.35); color: var(--green); }
+.railway-btn:hover { background: rgba(148,210,255,0.2); }
+.railway-btn.connected { background: rgba(74,222,128,0.12); border-color: rgba(74,222,128,0.35); color: var(--green); }
 
 /* ── SPARKLINE CHARTS ── */
 .sparkline-wrap {
@@ -776,17 +767,17 @@ body::before {
     </div>
   </div>
   <nav class="header-nav">
-    <div class="nav-btn active" onclick="showPage('scanner')">🌍 World Scanner</div>
-    <div class="nav-btn" onclick="showPage('alerts')">🔔 Price Alerts</div>
-    <div class="nav-btn" onclick="showPage('calendar')">📅 Calendar</div>
-    <div class="nav-btn" onclick="showPage('ai')">◈ AI Analysis</div>
+    <div class="nav-btn active" onclick="showPage(&#39;scanner&#39;)">🌍 World Scanner</div>
+    <div class="nav-btn" onclick="showPage(&#39;alerts&#39;)">🔔 Price Alerts</div>
+    <div class="nav-btn" onclick="showPage(&#39;calendar&#39;)">📅 Calendar</div>
+    <div class="nav-btn" onclick="showPage(&#39;ai&#39;)">◈ AI Analysis</div>
   </nav>
   <div class="header-right">
     <div class="scanner-status">
       <div class="pulse-dot green" id="scanDot"></div>
-      <span id="scanStatus">Ready</span>
+      <span id="scanStatus">Live</span>
     </div>
-    <button class="alert-bell" id="bellBtn" onclick="showPage('alerts')">
+    <button class="alert-bell" id="bellBtn" onclick="showPage(&#39;alerts&#39;)">
       🔔<span class="alert-count" id="alertCount" style="display:none">0</span>
     </button>
   </div>
@@ -798,7 +789,37 @@ body::before {
 <aside class="sidebar">
   <div>
     <div class="sec-label">Watchlist</div>
-    <div class="watchlist" id="watchlist"></div>
+    <div class="watchlist" id="watchlist"><div class="watch-item " onclick="selectDeal(&#39;LHR&#39;)">
+      <button class="watch-remove" onclick="event.stopPropagation();removeFromWatchlist(&#39;LHR&#39;)">✕</button>
+      <div class="watch-route">YYC <span class="arr">→</span> LHR</div>
+      <div class="watch-meta">
+        <div>
+          <div class="watch-price">$1,358 <span style="font-size:9px;color:var(--muted2)">CAD</span></div>
+          <div class="watch-avg">avg $1,350</div>
+        </div>
+        <span class="watch-badge wb-avg">— AVG</span>
+      </div>
+    </div><div class="watch-item " onclick="selectDeal(&#39;CUN&#39;)">
+      <button class="watch-remove" onclick="event.stopPropagation();removeFromWatchlist(&#39;CUN&#39;)">✕</button>
+      <div class="watch-route">YYC <span class="arr">→</span> CUN</div>
+      <div class="watch-meta">
+        <div>
+          <div class="watch-price">$827 <span style="font-size:9px;color:var(--muted2)">CAD</span></div>
+          <div class="watch-avg">avg $720</div>
+        </div>
+        <span class="watch-badge wb-high">📈 HIGH</span>
+      </div>
+    </div><div class="watch-item " onclick="selectDeal(&#39;NRT&#39;)">
+      <button class="watch-remove" onclick="event.stopPropagation();removeFromWatchlist(&#39;NRT&#39;)">✕</button>
+      <div class="watch-route">YYC <span class="arr">→</span> NRT</div>
+      <div class="watch-meta">
+        <div>
+          <div class="watch-price">$1,703 <span style="font-size:9px;color:var(--muted2)">CAD</span></div>
+          <div class="watch-avg">avg $1,800</div>
+        </div>
+        <span class="watch-badge wb-avg">— AVG</span>
+      </div>
+    </div></div>
     <button class="add-watch-btn" onclick="openModal()" style="margin-top:8px">+ Add Route to Watchlist</button>
   </div>
 
@@ -818,11 +839,11 @@ body::before {
     </div>
     <div class="scanner-row">
       <span class="scanner-key">Last scan</span>
-      <span class="scanner-val" id="lastScan">—</span>
+      <span class="scanner-val" id="lastScan">11:46:52 AM</span>
     </div>
     <div class="scanner-row">
       <span class="scanner-key">Routes tracked</span>
-      <span class="scanner-val" id="routeCount">0</span>
+      <span class="scanner-val" id="routeCount">55</span>
     </div>
   </div>
 
@@ -849,62 +870,2091 @@ body::before {
       </div>
     </div>
 
-    <!-- AMADEUS BANNER -->
-    <div class="amadeus-banner" id="amadeusBanner">
-      <div class="amadeus-icon">✈️</div>
-      <div class="amadeus-text">
-        <div class="amadeus-title">CONNECT AMADEUS — LIVE FLIGHT PRICES</div>
-        <div class="amadeus-sub" id="amadeusSubText">Paste your Amadeus API Key + Secret from <strong>developers.amadeus.com</strong> → My Apps</div>
+    <!-- RAILWAY PROXY BANNER -->
+    <div class="railway-banner" id="railwayBanner">
+      <div class="railway-icon">🚂</div>
+      <div class="railway-text">
+        <div class="railway-title">GOOGLE FLIGHTS — LIVE PRICES VIA RAILWAY PROXY</div>
+        <div class="railway-sub" id="railwaySubText">Click Connect to fetch real Google Flights prices through your Railway proxy.</div>
       </div>
-      <div class="amadeus-inputs">
-        <input class="amadeus-input" id="amadeusKey" placeholder="API Key" />
-        <input class="amadeus-input" id="amadeusSecret" placeholder="API Secret" type="password" />
-        <button class="amadeus-btn" id="amadeusBtn" onclick="connectAmadeus()">Connect</button>
-      </div>
+      <button class="railway-btn" id="railwayBtn" onclick="connectProxy()">Connect</button>
     </div>
 
     <div class="stats-bar">
       <div class="stat-box">
-        <div class="stat-num" id="st-deals">—</div>
+        <div class="stat-num" id="st-deals">13</div>
         <div class="stat-lbl">🔥 Active Deals</div>
       </div>
       <div class="stat-box">
-        <div class="stat-num" id="st-watched">—</div>
+        <div class="stat-num" id="st-watched">3</div>
         <div class="stat-lbl">👁 Watched Routes</div>
       </div>
       <div class="stat-box">
-        <div class="stat-num" id="st-scanned">—</div>
+        <div class="stat-num" id="st-scanned">55</div>
         <div class="stat-lbl">🌍 Routes Scanned</div>
       </div>
       <div class="stat-box">
-        <div class="stat-num" id="st-alerts">—</div>
+        <div class="stat-num" id="st-alerts">0</div>
         <div class="stat-lbl">🔔 Alerts Fired</div>
       </div>
     </div>
 
     <div class="scan-progress" id="scanProgress">
-      <div class="scan-text" id="scanText">Scanning routes...</div>
-      <div class="scan-bar-track"><div class="scan-bar-fill" id="scanBarFill" style="width:0%"></div></div>
+      <div class="scan-text" id="scanText">Done</div>
+      <div class="scan-bar-track"><div class="scan-bar-fill" id="scanBarFill" style="width: 0%;"></div></div>
     </div>
 
-    <div class="region-filters" id="regionFilters"></div>
+    <div class="region-filters" id="regionFilters"><div class="region-pill active" onclick="filterRegion(&#39;All&#39;)">All</div><div class="region-pill " onclick="filterRegion(&#39;Canada&#39;)">Canada</div><div class="region-pill " onclick="filterRegion(&#39;USA&#39;)">USA</div><div class="region-pill " onclick="filterRegion(&#39;Mexico/Caribbean&#39;)">Mexico/Caribbean</div><div class="region-pill " onclick="filterRegion(&#39;Europe&#39;)">Europe</div><div class="region-pill " onclick="filterRegion(&#39;Asia&#39;)">Asia</div><div class="region-pill " onclick="filterRegion(&#39;Pacific&#39;)">Pacific</div><div class="region-pill " onclick="filterRegion(&#39;South America&#39;)">South America</div><div class="region-pill " onclick="filterRegion(&#39;Africa&#39;)">Africa</div><div class="region-pill " onclick="filterRegion(&#39;Middle East&#39;)">Middle East</div></div>
 
     <div class="stop-filter-row">
       <span class="stop-filter-label">Stops:</span>
-      <div class="stop-pill active-all" id="sf-all" onclick="setStopFilter('all')">
-        <div class="stop-pill-dot dot-all"></div>All Flights<span class="stop-count" id="sc-all"></span>
+      <div class="stop-pill active-all" id="sf-all" onclick="setStopFilter(&#39;all&#39;)">
+        <div class="stop-pill-dot dot-all"></div>All Flights<span class="stop-count" id="sc-all"> (55)</span>
       </div>
-      <div class="stop-pill" id="sf-direct" onclick="setStopFilter('direct')">
-        <div class="stop-pill-dot dot-direct"></div>✈ Direct / Non-stop<span class="stop-count" id="sc-direct"></span>
+      <div class="stop-pill" id="sf-direct" onclick="setStopFilter(&#39;direct&#39;)">
+        <div class="stop-pill-dot dot-direct"></div>✈ Direct / Non-stop<span class="stop-count" id="sc-direct"> (21)</span>
       </div>
-      <div class="stop-pill" id="sf-layover" onclick="setStopFilter('layover')">
-        <div class="stop-pill-dot dot-layover"></div>⏱ Layover / Connecting<span class="stop-count" id="sc-layover"></span>
+      <div class="stop-pill" id="sf-layover" onclick="setStopFilter(&#39;layover&#39;)">
+        <div class="stop-pill-dot dot-layover"></div>⏱ Layover / Connecting<span class="stop-count" id="sc-layover"> (34)</span>
       </div>
     </div>
 
-    <div class="deals-grid" id="dealsGrid">
-      <!-- populated by JS -->
+    <div class="deals-grid" id="dealsGrid"><div class="deal-card " id="dc-YEG" onclick="selectDeal(&#39;YEG&#39;)" style="animation-delay:0s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>YEG</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇨🇦</span>
+          <span class="dc-tag tag-hot">🔥 DEAL</span>
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Edmonton, Canada</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$131<span>CAD</span>
+          <span class="trend-arrow ">—</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-deal">-18% avg</span>
+          <span class="dc-avg-label">avg $160</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#4ade80">$131</span>
     </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,27.209726443769014 197,8.972644376899709" fill="none" stroke="#4ade80" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="8.972644376899709" r="2.5" fill="#4ade80"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:25.833333333333336%;background:var(--green)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-PHX" onclick="selectDeal(&#39;PHX&#39;)" style="animation-delay:0.03s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>PHX</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇺🇸</span>
+          <span class="dc-tag tag-hot">🔥 DEAL</span>
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Phoenix, USA</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$344<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-deal">-18% avg</span>
+          <span class="dc-avg-label">avg $420</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#4ade80">$344</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,9.631183469004426 197,26.537883531621805" fill="none" stroke="#4ade80" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="26.537883531621805" r="2.5" fill="#4ade80"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:22.857142857142858%;background:var(--green)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>WestJet</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-DFW" onclick="selectDeal(&#39;DFW&#39;)" style="animation-delay:0.06s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>DFW</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇺🇸</span>
+          <span class="dc-tag tag-hot">🔥 DEAL</span>
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Dallas, USA</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$447<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-deal">-17% avg</span>
+          <span class="dc-avg-label">avg $540</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#4ade80">$447</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,11.01997649823737 197,25.121034077555784" fill="none" stroke="#4ade80" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="25.121034077555784" r="2.5" fill="#4ade80"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:24.166666666666668%;background:var(--green)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-ZIH" onclick="selectDeal(&#39;ZIH&#39;)" style="animation-delay:0.09s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>ZIH</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇲🇽</span>
+          <span class="dc-tag tag-hot">🔥 DEAL</span>
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Ixtapa/Zihuatanejo, Mexico</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$691<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-deal">-16% avg</span>
+          <span class="dc-avg-label">avg $825</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#4ade80">$691</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,11.13030069390901 197,25.00848111025445" fill="none" stroke="#4ade80" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="25.00848111025445" r="2.5" fill="#4ade80"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:25.636363636363633%;background:var(--green)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Sunwing</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-YWG" onclick="selectDeal(&#39;YWG&#39;)" style="animation-delay:0.12s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>YWG</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇨🇦</span>
+          <span class="dc-tag tag-hot">🔥 DEAL</span>
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Winnipeg, Canada</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$240<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-deal">-14% avg</span>
+          <span class="dc-avg-label">avg $280</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#4ade80">$240</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,9.242628475147427 197,26.934288121314225" fill="none" stroke="#4ade80" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="26.934288121314225" r="2.5" fill="#4ade80"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:30%;background:var(--green)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>WestJet</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-LAX" onclick="selectDeal(&#39;LAX&#39;)" style="animation-delay:0.15s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>LAX</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇺🇸</span>
+          <span class="dc-tag tag-hot">🔥 DEAL</span>
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Los Angeles, USA</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$397<span>CAD</span>
+          <span class="trend-arrow ">—</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-deal">-12% avg</span>
+          <span class="dc-avg-label">avg $450</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#4ade80">$397</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,22.16590284142991 197,13.916590284143037" fill="none" stroke="#4ade80" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="13.916590284143037" r="2.5" fill="#4ade80"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:32.33333333333333%;background:var(--green)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-YUL" onclick="selectDeal(&#39;YUL&#39;)" style="animation-delay:0.18s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>YUL</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇨🇦</span>
+          <span class="dc-tag tag-hot">🔥 DEAL</span>
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Montréal, Canada</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$408<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-deal">-11% avg</span>
+          <span class="dc-avg-label">avg $460</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#4ade80">$408</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,26.388704318936846 197,9.777408637873727" fill="none" stroke="#4ade80" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="9.777408637873727" r="2.5" fill="#4ade80"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:33.75%;background:var(--green)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-VRA" onclick="selectDeal(&#39;VRA&#39;)" style="animation-delay:0.21s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>VRA</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇨🇺</span>
+          <span class="dc-tag tag-hot">🔥 DEAL</span>
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Varadero, Cuba</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$825<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-deal">-11% avg</span>
+          <span class="dc-avg-label">avg $930</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#4ade80">$825</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,10.502227502227477 197,25.64924264924264" fill="none" stroke="#4ade80" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="25.64924264924264" r="2.5" fill="#4ade80"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:33.064516129032256%;background:var(--green)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Transat</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-ATH" onclick="selectDeal(&#39;ATH&#39;)" style="animation-delay:0.24s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>ATH</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇬🇷</span>
+          <span class="dc-tag tag-hot">🔥 DEAL</span>
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Athens, Greece</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,402<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-deal">-11% avg</span>
+          <span class="dc-avg-label">avg $1,575</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#4ade80">$1,402</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,11.182861514919662 197,24.954858454475904" fill="none" stroke="#4ade80" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="24.954858454475904" r="2.5" fill="#4ade80"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:33.523809523809526%;background:var(--green)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-SYD" onclick="selectDeal(&#39;SYD&#39;)" style="animation-delay:0.27s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>SYD</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇦🇺</span>
+          <span class="dc-tag tag-hot">🔥 DEAL</span>
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Sydney, Australia</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$2,147<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-deal">-11% avg</span>
+          <span class="dc-avg-label">avg $2,400</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#4ade80">$2,147</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,15.921415716856668 197,20.120575884823097" fill="none" stroke="#4ade80" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="20.120575884823097" r="2.5" fill="#4ade80"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:34.1875%;background:var(--green)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-BKK" onclick="selectDeal(&#39;BKK&#39;)" style="animation-delay:0.3s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>BKK</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇹🇭</span>
+          <span class="dc-tag tag-hot">🔥 DEAL</span>
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Bangkok, Thailand</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,488<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-deal">-10% avg</span>
+          <span class="dc-avg-label">avg $1,650</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#4ade80">$1,488</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,26.339449541284424 197,9.825688073394534" fill="none" stroke="#4ade80" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="9.825688073394534" r="2.5" fill="#4ade80"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:35.27272727272727%;background:var(--green)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-MBJ" onclick="selectDeal(&#39;MBJ&#39;)" style="animation-delay:0.32999999999999996s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>MBJ</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇯🇲</span>
+          <span class="dc-tag tag-hot">🔥 DEAL</span>
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Montego Bay, Jamaica</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$958<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-deal">-9% avg</span>
+          <span class="dc-avg-label">avg $1,050</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#4ade80">$958</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,24.148922884795486 197,11.97283796440838" fill="none" stroke="#4ade80" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="11.97283796440838" r="2.5" fill="#4ade80"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:36.857142857142854%;background:var(--green)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>WestJet Vacations</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-ICN" onclick="selectDeal(&#39;ICN&#39;)" style="animation-delay:0.36s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>ICN</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇰🇷</span>
+          <span class="dc-tag tag-hot">🔥 DEAL</span>
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Seoul, South Korea</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,580<span>CAD</span>
+          <span class="trend-arrow ">—</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-deal">-8% avg</span>
+          <span class="dc-avg-label">avg $1,725</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#4ade80">$1,580</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,18.902322811197138 197,17.115544967242396" fill="none" stroke="#4ade80" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="17.115544967242396" r="2.5" fill="#4ade80"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:37.391304347826086%;background:var(--green)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-SIN" onclick="selectDeal(&#39;SIN&#39;)" style="animation-delay:0.39s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>SIN</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇸🇬</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Singapore, Singapore</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,955<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">-7% avg</span>
+          <span class="dc-avg-label">avg $2,100</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$1,955</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,13.159547092125589 197,22.938239835306245" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="22.938239835306245" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:39.64285714285714%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-CAI" onclick="selectDeal(&#39;CAI&#39;)" style="animation-delay:0.42s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>CAI</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇪🇬</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Cairo, Egypt</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,836<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">-6% avg</span>
+          <span class="dc-avg-label">avg $1,950</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$1,836</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,26.85964912280705 197,9.315789473684251" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="9.315789473684251" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:41.23076923076923%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-NRT" onclick="selectDeal(&#39;NRT&#39;)" style="animation-delay:0.44999999999999996s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>NRT</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇯🇵</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          <span class="dc-tag tag-watch">WATCHING</span>
+        </div>
+      </div>
+      <div class="dc-city">Tokyo, Japan</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,703<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">-5% avg</span>
+          <span class="dc-avg-label">avg $1,800</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$1,703</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,26.13059033989263 197,10.030411449016082" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="10.030411449016082" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:41.91666666666667%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-GRU" onclick="selectDeal(&#39;GRU&#39;)" style="animation-delay:0.48s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>GRU</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇧🇷</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">São Paulo, Brazil</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,564<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">-5% avg</span>
+          <span class="dc-avg-label">avg $1,650</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$1,564</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,23.746656019165503 197,12.367139149530878" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="12.367139149530878" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:42.18181818181818%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-IST" onclick="selectDeal(&#39;IST&#39;)" style="animation-delay:0.51s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>IST</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇹🇷</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Istanbul, Turkey</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,435<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">-4% avg</span>
+          <span class="dc-avg-label">avg $1,500</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$1,435</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,13.147058823529438 197,22.950980392156907" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="22.950980392156907" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:43.5%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-BOG" onclick="selectDeal(&#39;BOG&#39;)" style="animation-delay:0.54s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>BOG</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇨🇴</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Bogotá, Colombia</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,305<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">-3% avg</span>
+          <span class="dc-avg-label">avg $1,350</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$1,305</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,14.866144106120068 197,21.197166113958463" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="21.197166113958463" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:45%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-HNL" onclick="selectDeal(&#39;HNL&#39;)" style="animation-delay:0.57s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>HNL</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇺🇸</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Honolulu, USA</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,034<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">-2% avg</span>
+          <span class="dc-avg-label">avg $1,050</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$1,034</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,15.114263505635499 197,20.944034201321436" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="20.944034201321436" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:47.714285714285715%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-EZE" onclick="selectDeal(&#39;EZE&#39;)" style="animation-delay:0.6s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>EZE</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇦🇷</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Buenos Aires, Argentina</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,764<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">-2% avg</span>
+          <span class="dc-avg-label">avg $1,800</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$1,764</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,21.353253652058473 197,14.713147410358616" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="14.713147410358616" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:47%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-HKG" onclick="selectDeal(&#39;HKG&#39;)" style="animation-delay:0.63s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>HKG</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇭🇰</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Hong Kong, Hong Kong</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,940<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">-1% avg</span>
+          <span class="dc-avg-label">avg $1,950</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$1,940</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,9.988036593947953 197,26.173821252638973" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="26.173821252638973" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:49.23076923076923%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-CDG" onclick="selectDeal(&#39;CDG&#39;)" style="animation-delay:0.6599999999999999s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>CDG</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇫🇷</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Paris, France</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,419<span>CAD</span>
+          <span class="trend-arrow ">—</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">0% avg</span>
+          <span class="dc-avg-label">avg $1,425</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$1,419</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,18.99802371541501 197,17.021739130434778" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="17.021739130434778" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:49.368421052631575%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-LHR" onclick="selectDeal(&#39;LHR&#39;)" style="animation-delay:0.69s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>LHR</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇬🇧</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          <span class="dc-tag tag-watch">WATCHING</span>
+        </div>
+      </div>
+      <div class="dc-city">London, UK</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,358<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">+1% avg</span>
+          <span class="dc-avg-label">avg $1,350</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$1,358</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,14.628830874006876 197,21.439273552780996" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="21.439273552780996" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:50.888888888888886%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-DEL" onclick="selectDeal(&#39;DEL&#39;)" style="animation-delay:0.72s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>DEL</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇮🇳</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">New Delhi, India</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,587<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">+1% avg</span>
+          <span class="dc-avg-label">avg $1,575</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$1,587</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,23.30265596046943 197,12.802347127856741" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="12.802347127856741" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:51.142857142857146%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-YHZ" onclick="selectDeal(&#39;YHZ&#39;)" style="animation-delay:0.75s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>YHZ</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇨🇦</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Halifax, Canada</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$539<span>CAD</span>
+          <span class="trend-arrow ">—</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">+3% avg</span>
+          <span class="dc-avg-label">avg $525</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$539</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,13.991902834008044 197,22.089068825910914" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="22.089068825910914" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:54%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-SEA" onclick="selectDeal(&#39;SEA&#39;)" style="animation-delay:0.78s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>SEA</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇺🇸</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Seattle, USA</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$344<span>CAD</span>
+          <span class="trend-arrow ">—</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">+3% avg</span>
+          <span class="dc-avg-label">avg $335</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$344</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,12.560439560439598 197,23.54945054945057" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="23.54945054945057" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:53.91304347826087%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-BOM" onclick="selectDeal(&#39;BOM&#39;)" style="animation-delay:0.8099999999999999s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>BOM</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇮🇳</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Mumbai, India</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,697<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">+3% avg</span>
+          <span class="dc-avg-label">avg $1,650</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$1,697</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,10.828252339269529 197,25.31663145185631" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="25.31663145185631" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:54.27272727272727%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-MEL" onclick="selectDeal(&#39;MEL&#39;)" style="animation-delay:0.84s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>MEL</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇦🇺</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Melbourne, Australia</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$2,576<span>CAD</span>
+          <span class="trend-arrow ">—</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">+4% avg</span>
+          <span class="dc-avg-label">avg $2,475</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$2,576</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,18.288516473052812 197,17.717196724433506" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="17.717196724433506" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:56.12121212121212%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-SFO" onclick="selectDeal(&#39;SFO&#39;)" style="animation-delay:0.87s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>SFO</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇺🇸</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">San Francisco, USA</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$503<span>CAD</span>
+          <span class="trend-arrow ">—</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">+5% avg</span>
+          <span class="dc-avg-label">avg $480</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$503</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,23.046635576282476 197,13.053297801465717" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="13.053297801465717" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:57.1875%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-PUJ" onclick="selectDeal(&#39;PUJ&#39;)" style="animation-delay:0.8999999999999999s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>PUJ</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇩🇴</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Punta Cana, Dominican Rep.</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,076<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">+5% avg</span>
+          <span class="dc-avg-label">avg $1,020</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$1,076</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,11.267002518891722 197,24.869017632241828" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="24.869017632241828" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:58.235294117647065%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Transat</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-JFK" onclick="selectDeal(&#39;JFK&#39;)" style="animation-delay:0.9299999999999999s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>JFK</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇺🇸</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">New York, USA</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$606<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">+6% avg</span>
+          <span class="dc-avg-label">avg $570</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$606</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,22.437609841827815 197,13.650263620386717" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="13.650263620386717" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:59.473684210526315%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-ZRH" onclick="selectDeal(&#39;ZRH&#39;)" style="animation-delay:0.96s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>ZRH</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇨🇭</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Zurich, Switzerland</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,592<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">+6% avg</span>
+          <span class="dc-avg-label">avg $1,500</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$1,592</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,10.480435783335881 197,25.67147460487952" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="25.67147460487952" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:59.199999999999996%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-FCO" onclick="selectDeal(&#39;FCO&#39;)" style="animation-delay:0.99s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>FCO</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇮🇹</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Rome, Italy</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,586<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">+8% avg</span>
+          <span class="dc-avg-label">avg $1,470</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$1,586</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,12.108256187417297 197,24.010768940109514" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="24.010768940109514" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:61.836734693877546%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-MIA" onclick="selectDeal(&#39;MIA&#39;)" style="animation-delay:1.02s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>MIA</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇺🇸</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Miami, USA</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$688<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">+9% avg</span>
+          <span class="dc-avg-label">avg $630</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$688</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,25.09048361934478 197,11.049921996879874" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="11.049921996879874" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:63.8095238095238%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-JNB" onclick="selectDeal(&#39;JNB&#39;)" style="animation-delay:1.05s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>JNB</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇿🇦</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Johannesburg, South Africa</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$2,937<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">+9% avg</span>
+          <span class="dc-avg-label">avg $2,700</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$2,937</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,13.10791775531067 197,22.990912189026474" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="22.990912189026474" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:63.16666666666667%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-TLV" onclick="selectDeal(&#39;TLV&#39;)" style="animation-delay:1.08s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>TLV</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇮🇱</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Tel Aviv, Israel</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,960<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-avg">+9% avg</span>
+          <span class="dc-avg-label">avg $1,800</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#94d2ff">$1,960</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,25.690355329949217 197,10.461928934010121" fill="none" stroke="#94d2ff" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="10.461928934010121" r="2.5" fill="#94d2ff"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:63.33333333333333%;background:var(--accent)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-CPH" onclick="selectDeal(&#39;CPH&#39;)" style="animation-delay:1.1099999999999999s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>CPH</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇩🇰</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Copenhagen, Denmark</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,580<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+10% avg</span>
+          <span class="dc-avg-label">avg $1,440</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$1,580</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,12.444772593030137 197,23.66745422327232" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="23.66745422327232" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:64.58333333333334%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-DXB" onclick="selectDeal(&#39;DXB&#39;)" style="animation-delay:1.14s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>DXB</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇦🇪</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Dubai, UAE</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,735<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+10% avg</span>
+          <span class="dc-avg-label">avg $1,575</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$1,735</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,22.36779242174626 197,13.718698517298144" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="13.718698517298144" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:65.23809523809524%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-SJD" onclick="selectDeal(&#39;SJD&#39;)" style="animation-delay:1.17s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>SJD</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇲🇽</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Los Cabos, Mexico</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$839<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+12% avg</span>
+          <span class="dc-avg-label">avg $750</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$839</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,22.0008802816901 197,14.078345070422504" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="14.078345070422504" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:67.80000000000001%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>WestJet Vacations</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-DUB" onclick="selectDeal(&#39;DUB&#39;)" style="animation-delay:1.2s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>DUB</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇮🇪</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Dublin, Ireland</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,475<span>CAD</span>
+          <span class="trend-arrow ">—</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+12% avg</span>
+          <span class="dc-avg-label">avg $1,320</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$1,475</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,16.228980322003558 197,19.80679785330947" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="19.80679785330947" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:67.61363636363636%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-YYZ" onclick="selectDeal(&#39;YYZ&#39;)" style="animation-delay:1.23s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>YYZ</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇨🇦</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Toronto, Canada</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$423<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+13% avg</span>
+          <span class="dc-avg-label">avg $375</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$423</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,25.39926739926744 197,10.747252747252784" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="10.747252747252784" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:69.19999999999999%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-BCN" onclick="selectDeal(&#39;BCN&#39;)" style="animation-delay:1.26s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>BCN</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇪🇸</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Barcelona, Spain</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,620<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+13% avg</span>
+          <span class="dc-avg-label">avg $1,440</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$1,620</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,10.434821696134236 197,25.71801018879231" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="25.71801018879231" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:68.75%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-PVR" onclick="selectDeal(&#39;PVR&#39;)" style="animation-delay:1.29s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>PVR</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇲🇽</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Puerto Vallarta, Mexico</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$891<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+14% avg</span>
+          <span class="dc-avg-label">avg $780</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$891</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,23.10101010101005 197,12.999999999999957" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="12.999999999999957" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:71.34615384615385%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>WestJet Vacations</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-CUN" onclick="selectDeal(&#39;CUN&#39;)" style="animation-delay:1.3199999999999998s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>CUN</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇲🇽</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          <span class="dc-tag tag-watch">WATCHING</span>
+        </div>
+      </div>
+      <div class="dc-city">Cancún, Mexico</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$827<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+15% avg</span>
+          <span class="dc-avg-label">avg $720</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$827</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,25.23956674100031 197,10.903791016247197" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="10.903791016247197" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:72.29166666666667%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>WestJet Vacations</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-LAS" onclick="selectDeal(&#39;LAS&#39;)" style="animation-delay:1.3499999999999999s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>LAS</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇺🇸</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Las Vegas, USA</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$490<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+17% avg</span>
+          <span class="dc-avg-label">avg $420</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$490</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,24.839729119638825 197,11.295711060948058" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="11.295711060948058" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:75%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>WestJet</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-FRA" onclick="selectDeal(&#39;FRA&#39;)" style="animation-delay:1.38s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>FRA</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇩🇪</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Frankfurt, Germany</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,608<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+17% avg</span>
+          <span class="dc-avg-label">avg $1,380</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$1,608</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,10.301140571767174 197,25.85439194193456" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="25.85439194193456" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:74.78260869565217%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-LIS" onclick="selectDeal(&#39;LIS&#39;)" style="animation-delay:1.41s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>LIS</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇵🇹</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Lisbon, Portugal</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,581<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+17% avg</span>
+          <span class="dc-avg-label">avg $1,350</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$1,581</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,24.86715481171549 197,11.268828451882829" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="11.268828451882829" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:75.66666666666667%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-YVR" onclick="selectDeal(&#39;YVR&#39;)" style="animation-delay:1.44s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>YVR</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇨🇦</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--green);border:1px solid var(--green)33">✈ Direct</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Vancouver, Canada</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$331<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+18% avg</span>
+          <span class="dc-avg-label">avg $280</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$331</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,25.826568265682642 197,10.32841328413284" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="10.32841328413284" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:75.5%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-AMS" onclick="selectDeal(&#39;AMS&#39;)" style="animation-delay:1.47s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>AMS</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇳🇱</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Amsterdam, Netherlands</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,587<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+18% avg</span>
+          <span class="dc-avg-label">avg $1,350</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$1,587</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,14.187864644107329 197,21.88914819136518" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="21.88914819136518" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:76.33333333333333%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-AKL" onclick="selectDeal(&#39;AKL&#39;)" style="animation-delay:1.5s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>AKL</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇳🇿</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Auckland, New Zealand</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$3,001<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+18% avg</span>
+          <span class="dc-avg-label">avg $2,550</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$3,001</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,19.58401792382378 197,16.44734876773716" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="16.44734876773716" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:76.52941176470588%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-NBO" onclick="selectDeal(&#39;NBO&#39;)" style="animation-delay:1.53s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>NBO</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇰🇪</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Nairobi, Kenya</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$2,833<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+18% avg</span>
+          <span class="dc-avg-label">avg $2,400</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$2,833</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,14.737160120845992 197,21.328755836308762" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="21.328755836308762" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:77.0625%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-ORD" onclick="selectDeal(&#39;ORD&#39;)" style="animation-delay:1.56s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>ORD</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇺🇸</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Chicago, USA</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$606<span>CAD</span>
+          <span class="trend-arrow ">—</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+19% avg</span>
+          <span class="dc-avg-label">avg $510</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$606</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,19.15560640732277 197,16.867276887871974" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="16.867276887871974" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:78.23529411764706%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-MAD" onclick="selectDeal(&#39;MAD&#39;)" style="animation-delay:1.5899999999999999s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>MAD</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇪🇸</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Madrid, Spain</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,679<span>CAD</span>
+          <span class="trend-arrow trend-down">▼</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+19% avg</span>
+          <span class="dc-avg-label">avg $1,410</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$1,679</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,15.752270433905117 197,20.293138244197767" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="20.293138244197767" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:78.61702127659575%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div><div class="deal-card " id="dc-LIM" onclick="selectDeal(&#39;LIM&#39;)" style="animation-delay:1.6199999999999999s">
+      <div class="dc-top">
+        <div class="dc-route">YYC<span class="sep">→</span>LIM</div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px">
+          <span style="font-size:22px">🇵🇪</span>
+          
+          <span class="dc-tag" style="background:rgba(0,0,0,0.2);color:var(--accent2);border:1px solid var(--accent2)33">⏱ Connecting</span>
+          
+        </div>
+      </div>
+      <div class="dc-city">Lima, Peru</div>
+      <div class="dc-price-row">
+        <div class="dc-price">$1,700<span>CAD</span>
+          <span class="trend-arrow trend-up">▲</span>
+        </div>
+        <div class="dc-vs-avg">
+          <span class="dc-pct pct-high">+19% avg</span>
+          <span class="dc-avg-label">avg $1,425</span>
+        </div>
+      </div>
+      <div class="sparkline-wrap">
+    <div class="sparkline-label">
+      <span>30-day trend</span>
+      <span style="color:#f87171">$1,700</span>
+    </div>
+    <div class="sparkline">
+      <svg viewBox="0 0 200 36" preserveAspectRatio="none">
+        <polyline points="3,22.431675720852436 197,13.65608023401585" fill="none" stroke="#f87171" stroke-width="1.5" opacity="0.8"></polyline>
+        <circle cx="197" cy="13.65608023401585" r="2.5" fill="#f87171"></circle>
+      </svg>
+    </div>
+  </div>
+      <div class="dc-bar"><div class="dc-bar-fill" style="width:78.94736842105263%;background:var(--red)"></div></div>
+      <div class="dc-footer">
+        <div class="dc-tags"><span>Air Canada</span></div>
+        <span>Click for AI analysis →</span>
+      </div>
+    </div></div>
   </div>
 
   <!-- ALERTS PAGE -->
@@ -922,11 +2972,11 @@ body::before {
       <div class="form-grid">
         <div class="fg">
           <label>Destination Code</label>
-          <input id="al-dest" placeholder="e.g. LHR, CUN" maxlength="3" style="text-transform:uppercase;font-family:var(--mono)" />
+          <input id="al-dest" placeholder="e.g. LHR, CUN" maxlength="3" style="text-transform:uppercase;font-family:var(--mono)">
         </div>
         <div class="fg">
           <label>Your Target Price ($CAD)</label>
-          <input id="al-price" type="number" placeholder="e.g. 800" />
+          <input id="al-price" type="number" placeholder="e.g. 800">
         </div>
         <div class="fg">
           <label>Alert Type</label>
@@ -940,7 +2990,43 @@ body::before {
       <button class="btn btn-primary" onclick="addAlert()">+ Add Alert</button>
     </div>
 
-    <div class="alerts-list" id="alertsList"></div>
+    <div class="alerts-list" id="alertsList"><div class="alert-card ">
+      <div class="alert-icon">🇬🇧</div>
+      <div class="alert-info">
+        <div class="alert-route">YYC → LHR · London</div>
+        <div class="alert-desc">Below Average · Target: $1200 · +1% vs avg</div>
+      </div>
+      <div class="alert-price-col">
+        <div class="alert-current neutral">$1,358</div>
+        <div class="alert-threshold">avg $1,350</div>
+      </div>
+      <span class="alert-status-badge asb-watch">👁 WATCHING</span>
+      <button class="btn btn-ghost btn-sm" onclick="removeAlert(1)" style="margin-left:4px">✕</button>
+    </div><div class="alert-card triggered-high">
+      <div class="alert-icon">🇲🇽</div>
+      <div class="alert-info">
+        <div class="alert-route">YYC → CUN · Cancún</div>
+        <div class="alert-desc">Below Average · Target: $700 · +15% vs avg</div>
+      </div>
+      <div class="alert-price-col">
+        <div class="alert-current bad">$827</div>
+        <div class="alert-threshold">avg $720</div>
+      </div>
+      <span class="alert-status-badge asb-high">📈 ABOVE AVG</span>
+      <button class="btn btn-ghost btn-sm" onclick="removeAlert(2)" style="margin-left:4px">✕</button>
+    </div><div class="alert-card triggered">
+      <div class="alert-icon">🇯🇵</div>
+      <div class="alert-info">
+        <div class="alert-route">YYC → NRT · Tokyo</div>
+        <div class="alert-desc">Below Target · Target: $1500 · -5% vs avg</div>
+      </div>
+      <div class="alert-price-col">
+        <div class="alert-current good">$1,703</div>
+        <div class="alert-threshold">avg $1,800</div>
+      </div>
+      <span class="alert-status-badge asb-deal">🔥 DEAL ALERT</span>
+      <button class="btn btn-ghost btn-sm" onclick="removeAlert(3)" style="margin-left:4px">✕</button>
+    </div></div>
   </div>
 
   <!-- CALENDAR PAGE -->
@@ -953,17 +3039,141 @@ body::before {
       <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
         <div style="display:flex;align-items:center;gap:8px">
           <span style="font-family:var(--mono);font-size:11px;color:var(--muted2)">ROUTE TO:</span>
-          <input class="cal-dest-input" id="calDest" placeholder="e.g. LHR" maxlength="3" value="LHR" onchange="buildCalendar()" />
+          <input class="cal-dest-input" id="calDest" placeholder="e.g. LHR" maxlength="3" value="LHR" onchange="buildCalendar()">
           <button class="btn btn-primary btn-sm" onclick="buildCalendar()">Update</button>
         </div>
         <div class="cal-nav">
           <button class="cal-nav-btn" onclick="changeCalMonth(-1)">‹</button>
-          <div class="cal-month-label" id="calMonthLabel">—</div>
+          <div class="cal-month-label" id="calMonthLabel">March 2026</div>
           <button class="cal-nav-btn" onclick="changeCalMonth(1)">›</button>
         </div>
       </div>
     </div>
-    <div class="cal-grid" id="calGrid"></div>
+    <div class="cal-grid" id="calGrid"><div class="cal-day-header">SUN</div><div class="cal-day-header">MON</div><div class="cal-day-header">TUE</div><div class="cal-day-header">WED</div><div class="cal-day-header">THU</div><div class="cal-day-header">FRI</div><div class="cal-day-header">SAT</div><div class="cal-day  " style="opacity:0.35" onclick="">
+      <div class="cal-day-num">1</div>
+      <div class="cal-day-price neutral">$1.4k</div>
+      
+    </div><div class="cal-day deal " style="opacity:0.35" onclick="">
+      <div class="cal-day-num">2</div>
+      <div class="cal-day-price green">$1.3k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day cheapest " style="opacity:0.35" onclick="">
+      <div class="cal-day-num">3</div>
+      <div class="cal-day-price green">$1.1k</div>
+      <div class="cal-day-badge">🏆</div>
+    </div><div class="cal-day deal " style="opacity:0.35" onclick="">
+      <div class="cal-day-num">4</div>
+      <div class="cal-day-price green">$1.2k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day  " style="opacity:0.35" onclick="">
+      <div class="cal-day-num">5</div>
+      <div class="cal-day-price neutral">$1.3k</div>
+      
+    </div><div class="cal-day deal " style="opacity:0.35" onclick="">
+      <div class="cal-day-num">6</div>
+      <div class="cal-day-price green">$1.3k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day deal " style="opacity:0.35" onclick="">
+      <div class="cal-day-num">7</div>
+      <div class="cal-day-price green">$1.2k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day deal " style="opacity:0.35" onclick="">
+      <div class="cal-day-num">8</div>
+      <div class="cal-day-price green">$1.2k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day deal today" style="opacity:0.35" onclick="">
+      <div class="cal-day-num">9</div>
+      <div class="cal-day-price green">$1.2k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day deal " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,10,1233)">
+      <div class="cal-day-num">10</div>
+      <div class="cal-day-price green">$1.2k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day deal " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,11,1247)">
+      <div class="cal-day-num">11</div>
+      <div class="cal-day-price green">$1.2k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day deal " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,12,1259)">
+      <div class="cal-day-num">12</div>
+      <div class="cal-day-price green">$1.3k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day deal " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,13,1222)">
+      <div class="cal-day-num">13</div>
+      <div class="cal-day-price green">$1.2k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day deal " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,14,1239)">
+      <div class="cal-day-num">14</div>
+      <div class="cal-day-price green">$1.2k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day  " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,15,1323)">
+      <div class="cal-day-num">15</div>
+      <div class="cal-day-price neutral">$1.3k</div>
+      
+    </div><div class="cal-day deal " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,16,1234)">
+      <div class="cal-day-num">16</div>
+      <div class="cal-day-price green">$1.2k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day deal " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,17,1076)">
+      <div class="cal-day-num">17</div>
+      <div class="cal-day-price green">$1.1k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day deal " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,18,1073)">
+      <div class="cal-day-num">18</div>
+      <div class="cal-day-price green">$1.1k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day deal " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,19,1207)">
+      <div class="cal-day-num">19</div>
+      <div class="cal-day-price green">$1.2k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day deal " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,20,1256)">
+      <div class="cal-day-num">20</div>
+      <div class="cal-day-price green">$1.3k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day  " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,21,1331)">
+      <div class="cal-day-num">21</div>
+      <div class="cal-day-price neutral">$1.3k</div>
+      
+    </div><div class="cal-day  " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,22,1383)">
+      <div class="cal-day-num">22</div>
+      <div class="cal-day-price neutral">$1.4k</div>
+      
+    </div><div class="cal-day  " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,23,1287)">
+      <div class="cal-day-num">23</div>
+      <div class="cal-day-price neutral">$1.3k</div>
+      
+    </div><div class="cal-day deal " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,24,1155)">
+      <div class="cal-day-num">24</div>
+      <div class="cal-day-price green">$1.2k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day deal " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,25,1126)">
+      <div class="cal-day-num">25</div>
+      <div class="cal-day-price green">$1.1k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day  " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,26,1289)">
+      <div class="cal-day-num">26</div>
+      <div class="cal-day-price neutral">$1.3k</div>
+      
+    </div><div class="cal-day deal " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,27,1272)">
+      <div class="cal-day-num">27</div>
+      <div class="cal-day-price green">$1.3k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day  " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,28,1378)">
+      <div class="cal-day-num">28</div>
+      <div class="cal-day-price neutral">$1.4k</div>
+      
+    </div><div class="cal-day  " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,29,1380)">
+      <div class="cal-day-num">29</div>
+      <div class="cal-day-price neutral">$1.4k</div>
+      
+    </div><div class="cal-day deal " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,30,1219)">
+      <div class="cal-day-num">30</div>
+      <div class="cal-day-price green">$1.2k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div><div class="cal-day deal " style="opacity:1" onclick="calDayClick(&#39;LHR&#39;,31,1161)">
+      <div class="cal-day-num">31</div>
+      <div class="cal-day-price green">$1.2k</div>
+      <div class="cal-day-badge">🔥</div>
+    </div></div>
     <div class="cal-legend">
       <div class="cal-legend-item"><div class="cal-legend-dot" style="background:rgba(74,222,128,0.5)"></div>Below average — good time to fly</div>
       <div class="cal-legend-item"><div class="cal-legend-dot" style="background:rgba(74,222,128,0.9);box-shadow:0 0 6px rgba(74,222,128,0.5)"></div>Cheapest day of month 🏆</div>
@@ -1016,15 +3226,15 @@ body::before {
     <div class="form-grid">
       <div class="fg">
         <label>Destination (IATA)</label>
-        <input id="m-dest" placeholder="e.g. NRT, LHR" maxlength="3" style="text-transform:uppercase;font-family:var(--mono)" />
+        <input id="m-dest" placeholder="e.g. NRT, LHR" maxlength="3" style="text-transform:uppercase;font-family:var(--mono)">
       </div>
       <div class="fg">
         <label>City Name</label>
-        <input id="m-city" placeholder="e.g. Tokyo" />
+        <input id="m-city" placeholder="e.g. Tokyo">
       </div>
       <div class="fg">
         <label>Target Price (CAD)</label>
-        <input id="m-price" type="number" placeholder="Optional" />
+        <input id="m-price" type="number" placeholder="Optional">
       </div>
       <div class="fg">
         <label>Alert On</label>
@@ -1520,119 +3730,60 @@ function removeAlert(id) {
 }
 
 // ═══════════════════════════════════════════════════
-// AMADEUS API — live flight prices, no server needed
+// RAILWAY PROXY — Google Flights live prices
 // ═══════════════════════════════════════════════════
-const AMADEUS_TOKEN_URL = 'https://test.api.amadeus.com/v1/security/oauth2/token';
-const AMADEUS_SEARCH_URL = 'https://test.api.amadeus.com/v2/shopping/flight-offers';
+const PROXY_URL = 'https://yyc-proxy-production.up.railway.app';
+let proxyConnected = false;
 
-let amadeusKey    = '';
-let amadeusSecret = '';
-let amadeusToken  = null;
-let amadeusTokenExpiry = 0;
-let amadeusConnected = false;
-
-async function connectAmadeus() {
-  amadeusKey    = document.getElementById('amadeusKey').value.trim();
-  amadeusSecret = document.getElementById('amadeusSecret').value.trim();
-
-  if (!amadeusKey || !amadeusSecret) {
-    showToast('error','⚠️','Missing credentials','Enter both your Amadeus API Key and Secret.');
-    return;
-  }
-
-  const btn = document.getElementById('amadeusBtn');
+async function connectProxy() {
+  const btn = document.getElementById('railwayBtn');
   btn.textContent = 'Connecting...'; btn.disabled = true;
 
-  const token = await fetchAmadeusToken();
-  if (!token) {
-    btn.textContent = 'Connect'; btn.disabled = false;
-    return;
-  }
-
-  // Test with a real search: YYC → YVR
   try {
-    const tomorrow = new Date(); tomorrow.setDate(tomorrow.getDate() + 14);
-    const dateStr  = tomorrow.toISOString().split('T')[0];
-    const testUrl  = `${AMADEUS_SEARCH_URL}?originLocationCode=YYC&destinationLocationCode=YVR&departureDate=${dateStr}&adults=1&max=1&currencyCode=CAD`;
-    const res = await fetch(testUrl, { headers: { Authorization: `Bearer ${token}` } });
+    const res  = await fetch(`${PROXY_URL}/health`);
     const data = await res.json();
+    if (data.status !== 'running') throw new Error('Proxy not ready');
+    if (!data.key_set) throw new Error('SERP_API_KEY not set in Railway — add it in Variables');
 
-    if (data.errors) throw new Error(data.errors[0]?.detail || 'Search failed');
-
-    amadeusConnected = true;
-    const banner = document.getElementById('amadeusBanner');
+    proxyConnected = true;
+    const banner = document.getElementById('railwayBanner');
     banner.classList.add('connected');
-    banner.querySelector('.amadeus-title').textContent = '✅ AMADEUS CONNECTED — LIVE PRICES ACTIVE';
-    document.getElementById('amadeusSubText').textContent = 'Real flight prices from Amadeus GDS. Click any route card to fetch live data.';
+    banner.querySelector('.railway-title').textContent = '✅ GOOGLE FLIGHTS CONNECTED — LIVE PRICES ACTIVE';
+    document.getElementById('railwaySubText').textContent = 'Railway proxy is live. Click any route card to fetch a real Google Flights price.';
     btn.textContent = '✓ Live'; btn.classList.add('connected'); btn.disabled = false;
-    document.getElementById('amadeusKey').disabled = true;
-    document.getElementById('amadeusSecret').disabled = true;
-
-    // Update YVR with real price if available
-    if (data.data?.[0]) {
-      const price = Math.round(parseFloat(data.data[0].price?.grandTotal || 0));
-      if (price > 0) state.prices['YVR'].current = price;
-      renderDealsGrid();
-    }
-    showToast('deal','✈️','Amadeus Connected!','Real GDS prices now active. Click any route for live data.');
-
+    showToast('deal', '✈️', 'Google Flights Connected!', 'Real prices now active — click any route to fetch live data.');
   } catch(e) {
-    const banner = document.getElementById('amadeusBanner');
+    const banner = document.getElementById('railwayBanner');
     banner.classList.add('error');
-    banner.querySelector('.amadeus-title').textContent = '❌ CONNECTION FAILED';
-    document.getElementById('amadeusSubText').textContent = e.message + ' — Check your API Key & Secret at developers.amadeus.com';
+    banner.querySelector('.railway-title').textContent = '❌ CONNECTION FAILED';
+    document.getElementById('railwaySubText').textContent = e.message;
     btn.textContent = 'Retry'; btn.disabled = false;
-    showToast('error','❌','Amadeus Error', e.message);
-  }
-}
-
-async function fetchAmadeusToken() {
-  // Return cached token if still valid (tokens last 30 min)
-  if (amadeusToken && Date.now() < amadeusTokenExpiry) return amadeusToken;
-
-  try {
-    const res = await fetch(AMADEUS_TOKEN_URL, {
-      method : 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body   : `grant_type=client_credentials&client_id=${encodeURIComponent(amadeusKey)}&client_secret=${encodeURIComponent(amadeusSecret)}`,
-    });
-    const data = await res.json();
-    if (data.error) throw new Error(data.error_description || data.error);
-    amadeusToken       = data.access_token;
-    amadeusTokenExpiry = Date.now() + (data.expires_in - 60) * 1000; // refresh 1 min early
-    return amadeusToken;
-  } catch(e) {
-    showToast('error','❌','Token Error', e.message || 'Could not get Amadeus token — check credentials');
-    return null;
+    showToast('error', '❌', 'Proxy Error', e.message);
   }
 }
 
 async function fetchLivePrice(destCode, depDate) {
-  if (!amadeusConnected) return null;
-  const token = await fetchAmadeusToken();
-  if (!token) return null;
-
+  if (!proxyConnected) return null;
   try {
-    const url = `${AMADEUS_SEARCH_URL}?originLocationCode=YYC&destinationLocationCode=${destCode}&departureDate=${depDate}&adults=1&max=5&currencyCode=CAD&nonStop=false`;
-    const res  = await fetch(url, { headers: { Authorization: `Bearer ${token}` } });
+    const params = new URLSearchParams({
+      engine       : 'google_flights',
+      departure_id : 'YYC',
+      arrival_id   : destCode,
+      outbound_date: depDate,
+      currency     : 'CAD',
+    });
+    const res  = await fetch(`${PROXY_URL}/?${params}`);
     const data = await res.json();
+    if (data.error || !data.best_flights?.length) return null;
 
-    if (data.errors || !data.data?.length) return null;
-
-    const best = data.data[0];
-    const price = Math.round(parseFloat(best.price?.grandTotal || 0));
-    if (!price) return null;
-
-    const seg      = best.itineraries?.[0]?.segments?.[0];
-    const airline  = seg?.carrierCode || 'Unknown';
-    const stops    = (best.itineraries?.[0]?.segments?.length || 1) - 1;
-    const duration = best.itineraries?.[0]?.duration || '';
-
-    // Parse ISO duration PT6H30M → "6h 30m"
-    const durMatch  = duration.match(/PT(\d+H)?(\d+M)?/);
-    const durStr    = [(durMatch?.[1]||'').replace('H','h '), (durMatch?.[2]||'').replace('M','m')].filter(Boolean).join('').trim();
-
-    return { price, airline, stops, duration: durStr, raw: data.data.slice(0,3) };
+    const best     = data.best_flights[0];
+    const dur      = best.total_duration || 0;
+    return {
+      price   : best.price,
+      airline : best.flights?.[0]?.airline || 'Unknown',
+      stops   : (best.flights?.length || 1) - 1,
+      duration: `${Math.floor(dur/60)}h ${dur%60}m`,
+    };
   } catch(e) { return null; }
 }
 
@@ -1973,5 +4124,6 @@ function init() {
 
 init();
 </script>
-</body>
-</html>
+
+
+</body></html>
